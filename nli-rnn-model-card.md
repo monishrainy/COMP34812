@@ -1,7 +1,7 @@
 {}
 ---
 
-# Model Card for Category-B-NLI-ESIM-Lite
+# Model Card for NLI Task (Category B)
 
 <!-- Provide a quick summary of what the model is/does. -->
 
@@ -13,17 +13,15 @@ The system was developed as part of the **COMP34812 Natural Language Understandi
 
 ### Model Description
 
-This model was designed for the **Natural Language Inference (NLI)** track of the COMP34812 shared task. The goal of the task is to determine whether a **hypothesis sentence logically follows from a premise sentence**.
-
 The architecture is inspired by the **Enhanced Sequential Inference Model (ESIM)**. The model encodes both the premise and hypothesis using a **shared Bidirectional LSTM encoder** and applies **soft attention alignment** between the two sequences. The aligned representations are then combined using **local inference modelling operations**, including concatenation, difference, and element-wise multiplication. These representations are pooled and passed through a **multi-layer perceptron classifier** to produce the final entailment prediction.
 
 The model uses **pretrained FastText Wiki News Subwords 300-dimensional embeddings**, which help represent rare and unseen words through subword information.
 
-- **Developed by:** [Insert Student Names]
+- **Developed by:** Mohd Monish Rainy, Diya Chutani and Affan
 - **Language(s):** English
-- **Model type:** Supervised Deep Learning Model for Pairwise Sequence Classification
+- **Model type:** Supervised Deep Learning Model
 - **Model architecture:** ESIM-inspired architecture with FastText embeddings, shared BiLSTM encoder, attention alignment, local inference composition, pooling, and MLP classifier
-- **Finetuned from model [optional]:** FastText Wiki News Subwords 300d embeddings
+
 
 ### Model Resources
 
@@ -67,40 +65,38 @@ The model was trained as a supervised classifier using the training set and eval
 
 #### Training Hyperparameters
 
-- vocabulary size: 30,000  
-- embedding dimension: 300  
-- pretrained embeddings: FastText Wiki News Subwords 300d  
-- embeddings trainable: False  
-- BiLSTM hidden units: 200 per direction  
-- batch size: 32  
-- number of epochs: 15  
-- optimizer: Adam  
-- learning rate: 8e-4  
-- gradient clipping: clipnorm = 1.0  
-- dropout:
-  - BiLSTM dropout: 0.20
-  - comparison layer dropout: 0.25
-  - classifier dropout: 0.40 and 0.30
-- loss function: binary cross entropy
-- random seed: 42
+    - vocabulary size: 30,000  
+    - embedding dimension: 300  
+    - pretrained embeddings: FastText Wiki News Subwords 300d  
+    - embeddings trainable: False  
+    - BiLSTM hidden units: 200 per direction  
+    - batch size: 32  
+    - number of epochs: 15  
+    - optimizer: Adam  
+    - learning rate: 8e-4  
+    - gradient clipping: clipnorm = 1.0  
+    - dropout:
+      - BiLSTM dropout: 0.20
+      - comparison layer dropout: 0.25
+      - classifier dropout: 0.40 and 0.30
+    - loss function: binary cross entropy
+    - random seed: 42
 
 Training also used the following callbacks:
 
-- EarlyStopping on validation loss
-- ReduceLROnPlateau to reduce learning rate when validation loss plateaus
-- ModelCheckpoint to save the best-performing model
+    - EarlyStopping on validation loss
+    - ReduceLROnPlateau to reduce learning rate when validation loss plateaus
+    - ModelCheckpoint to save the best-performing model
 
 #### Speeds, Sizes, Times
 
-Approximate training characteristics:
-
-- training environment: TensorFlow / Keras notebook environment
-- training epochs: up to 15 with early stopping
-- saved artifacts:
-  - trained model (`best_model.keras`)
-  - tokenizer (`tokenizer.pkl`)
-  - configuration file (`config.json`)
-- training time depends on hardware but typically ranges from several minutes to under an hour on GPU-enabled environments
+    - training environment: TensorFlow / Keras notebook environment
+    - training epochs: up to 15 with early stopping
+    - saved artifacts:
+      - trained model (`best_model.keras`)
+      - tokenizer (`tokenizer.pkl`)
+      - configuration file (`config.json`)
+    - training time depends on hardware but typically ranges from several minutes to under an hour on GPU-enabled environments
 
 ## Evaluation
 
@@ -116,10 +112,10 @@ At the time of writing, the official shared-task **test file had not yet been re
 
 The following metrics were computed during evaluation:
 
-- Accuracy
-- Precision
-- Recall
-- F1-score
+    - Accuracy
+    - Precision
+    - Recall
+    - F1-score
 
 Predicted probabilities were converted to binary labels using a **classification threshold of 0.5**.
 
