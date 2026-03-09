@@ -6,7 +6,6 @@
 <!-- Provide a quick summary of what the model is/does. -->
 
 This model performs **Natural Language Inference (NLI)** by predicting whether a **hypothesis is entailed by a premise**.  
-It is a deep learning model that uses **FastText pretrained embeddings and a BiLSTM-based ESIM-style architecture with soft attention and local inference modelling**.  
 The system was developed as part of the **COMP34812 Natural Language Understanding shared task** for pairwise sequence classification.
 
 ## Model Details
@@ -19,7 +18,7 @@ The model uses **pretrained FastText Wiki News Subwords 300-dimensional embeddin
 
 - **Developed by:** Mohd Monish Rainy, Diya Chutani and Affan
 - **Language(s):** English
-- **Model type:** Supervised Deep Learning Model
+- **Model type:** Supervised
 - **Model architecture:** ESIM-inspired architecture with FastText embeddings, shared BiLSTM encoder, attention alignment, local inference composition, pooling, and MLP classifier
 
 
@@ -36,7 +35,7 @@ The model uses **pretrained FastText Wiki News Subwords 300-dimensional embeddin
 
 ### Training Data
 
-The model was trained using the **dataset provided for the COMP34812 Natural Language Inference shared task**. The task operates in **closed mode**, meaning that only the provided dataset was used during development.
+The model was trained using the **dataset provided for the COMP34812 Natural Language Inference shared task**. 
 
 The dataset contains:
 
@@ -105,8 +104,6 @@ Training also used the following callbacks:
 #### Testing Data
 
 Model evaluation was performed on the **development dataset (`dev.csv`)**, which contains **6,736 premise–hypothesis pairs**. This dataset was used to measure model performance and guide model selection and hyperparameter tuning.
-
-At the time of writing, the official shared-task **test file had not yet been released**, so no hidden-test results are reported here. The trained model is, however, fully compatible with unseen input files and can generate predictions using the provided **demo notebook** once the official test data becomes available.
 
 #### Metrics
 
@@ -199,10 +196,12 @@ Additionally, the model relies on a fixed probability threshold for classificati
 
 This model was developed as part of the **COMP34812 Natural Language Understanding coursework shared task**. It corresponds to **Category B: deep learning-based approaches that do not use transformer architectures**.
 
+The hyperparameters were determined by experimentation with different values.
+
 The full implementation is organised into three notebooks:
 
 - **`train.ipynb`** – trains the ESIM-inspired BiLSTM model and saves the best model
 - **`evaluate.ipynb`** – loads the saved model and evaluates it on the development set
 - **`demo.ipynb`** – runs the trained model on unseen input data and generates prediction outputs in the required submission format
 
-The goal of this solution is to demonstrate how **attention-based recurrent architectures can model sentence interactions in NLI without relying on transformer models**. Once the official test file is released, the demo notebook can be used to generate the required predictions for submission.
+The goal of this solution is to demonstrate how **attention-based recurrent architectures can model sentence interactions in NLI without relying on transformer models**.
