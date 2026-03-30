@@ -33,23 +33,18 @@ repo: https://github.com/monishrainy/COMP34812
 
 ## Model Overview
 
-This model performs Natural Language Inference (NLI), classifying whether a hypothesis is supported or contradicted by a given premise.
+This model is designed for Natural Language Inference (NLI), where the goal is to determine whether a hypothesis is supported or contradicted by a premise.
 
-The approach uses a hybrid ensemble of two transformer-based models:
-
-- A cross-encoder RoBERTa model, which processes the premise and hypothesis jointly  
-- A bi-encoder RoBERTa model, which encodes each sentence separately and compares their representations  
-
-The final prediction is obtained by combining both models using a weighted average.
+It uses a hybrid ensemble of two RoBERTa-based models: a cross-encoder that processes the premise and hypothesis jointly, and a bi-encoder that encodes them separately and compares their representations. Final predictions are made using a weighted average of both models.
 
 ---
 
 ## Model Architecture
 
-The system combines two complementary approaches:
+The ensemble combines two complementary modeling strategies:
 
-- The cross-encoder captures detailed token-level interactions between the premise and hypothesis  
-- The bi-encoder captures overall semantic similarity by comparing sentence embeddings  
+- The **cross-encoder** captures fine-grained interactions between the premise and hypothesis by processing them jointly.
+- The **bi-encoder** captures sentence-level semantic similarity by encoding each text separately and comparing the resulting embeddings.
 
 The final prediction is computed as:
 
@@ -57,7 +52,7 @@ The final prediction is computed as:
 \text{final\_logits} = \alpha \cdot \text{cross\_logits} + (1 - \alpha) \cdot \text{bi\_logits}
 \]
 
-The weight \( \alpha \) is selected based on development set performance.
+where \( \alpha \) is chosen based on development set performance.
 
 ---
 
