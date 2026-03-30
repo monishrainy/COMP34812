@@ -16,6 +16,12 @@ repo: https://github.com/monishrainy/COMP34812
 
 ## Model Details
 
+### Model Description
+
+This model is designed for Natural Language Inference (NLI), where the goal is to determine whether a hypothesis is supported or contradicted by a premise.
+
+It uses a hybrid ensemble of two RoBERTa-based models: a cross-encoder that processes the premise and hypothesis jointly, and a bi-encoder that encodes them separately and compares their representations. Final predictions are made using a weighted average of both models.
+
 - Developed by: Diya Chutani, Affan Bin Imran and Mohd Monish Rainy  
 - Language(s): English  
 - Model type: Supervised  
@@ -24,22 +30,7 @@ repo: https://github.com/monishrainy/COMP34812
 
 ---
 
-## Model Resources
-
-- Repository: https://huggingface.co/FacebookAI/roberta-base
-- Paper or documentation: https://arxiv.org/abs/1907.11692 
-
----
-
-## Model Overview
-
-This model is designed for Natural Language Inference (NLI), where the goal is to determine whether a hypothesis is supported or contradicted by a premise.
-
-It uses a hybrid ensemble of two RoBERTa-based models: a cross-encoder that processes the premise and hypothesis jointly, and a bi-encoder that encodes them separately and compares their representations. Final predictions are made using a weighted average of both models.
-
----
-
-## Model Architecture
+### Model Architecture
 
 The ensemble combines two complementary modeling strategies:
 
@@ -56,9 +47,16 @@ where \( \alpha \) is chosen based on development set performance.
 
 ---
 
+### Model Resources
+
+- Repository: https://huggingface.co/FacebookAI/roberta-base
+- Paper or documentation: https://arxiv.org/abs/1907.11692 
+
+---
+
 ## Training Details
 
-### Dataset
+### Training Dataset
 - Approximately 24,000 premise-hypothesis pairs from the NLI shared task  
 - Binary labels:
   - 0: Contradiction  
@@ -105,21 +103,14 @@ where \( \alpha \) is chosen based on development set performance.
 
 ---
 
-## Key Contributions
-
-- Combines cross encoder and bi encoder transformer architectures  
-- Uses a weighted ensemble to integrate complementary representations  
-- Improves performance over standard fine-tuned transformer models
-
----
-
 ## Technical Specifications
 
 ### Hardware
 
-- GPU: NVIDIA Tesla T4  
+- RAM: 10–16 GB recommended for training
+- Storage: 
+- GPU: NVIDIA Tesla T4
 - Compute: CUDA enabled GPU acceleration  
-- RAM: 10–16 GB recommended for training  
 
 ---
 
