@@ -120,8 +120,8 @@ Training also used the following callbacks:
 
 #### Speeds, Sizes, Times
 
-    - overall training time: 4 minutes 58 seconds  
-    - duration per training epoch: 19.82 seconds  
+    - overall training time: 5 minutes 10 seconds  
+    - duration per training epoch: 20.42 seconds  
     - model size: 50.02 MB  
     - tokenizer size: 1.35 MB  
 
