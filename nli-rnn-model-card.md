@@ -1,7 +1,19 @@
-{}
+---
+language: en
+license: MIT
+tags:
+  - sequence-classification
+  - pairwise-classification
+  - natural-language-inference
+  - ESIM
+  - nlu
+repo: https://github.com/monishrainy/COMP34812
 ---
 
-# Model Card for NLI Task (Category B)
+# Model Card for r04271dc-b13305ax-s79336mx-NLI
+
+---
+
 
 <!-- Provide a quick summary of what the model is/does. -->
 
@@ -16,20 +28,21 @@ The architecture is inspired by the **Enhanced Sequential Inference Model (ESIM)
 
 The model uses **pretrained FastText Wiki News Subwords 300-dimensional embeddings**, which help represent rare and unseen words through subword information.
 
-- **Developed by:** Mohd Monish Rainy, Diya Chutani and Affan
+- **Developed by:** Diya Chutani, Affan Bin Imran, and Mohd Monish Rainy
 - **Language(s):** English
 - **Model type:** Supervised
-- **Model architecture:** ESIM-inspired architecture with FastText embeddings, shared BiLSTM encoder, attention alignment, local inference composition, pooling, and MLP classifier
+- **Model architecture:** Shared BiLSTM encoder (ESIM-inspired architecture with FastText embeddings, attention alignment, local inference composition, pooling, and MLP classifier)
+- **Finetuned from model [optional]:** None
 
 
 ### Model Resources
 
 <!-- Provide links where applicable. -->
 
-- **Repository:** Included in coursework submission repository
+- **Repository:** None
 - **Paper or documentation:**  
-  - Chen et al., *Enhanced LSTM for Natural Language Inference (ESIM)*  
-  - Bojanowski et al., *Enriching Word Vectors with Subword Information (FastText)*
+  - https://arxiv.org/pdf/1606.01933
+  - https://arxiv.org/pdf/1609.06038
 
 ## Training Details
 
@@ -41,6 +54,9 @@ The dataset contains:
 
 - approximately **24,000 premise–hypothesis pairs for training**
 - approximately **6,736 premise–hypothesis pairs for development/validation**
+- Binary labels:
+  - 0: Contradiction
+  - 1: Support
 
 Each instance contains:
 
@@ -120,38 +136,21 @@ Predicted probabilities were converted to binary labels using a **classification
 
 Development-set results from `evaluate.ipynb`:
 
-- **Accuracy:** 0.7320  
-- **Precision:** 0.7287  
-- **Recall:** 0.7662  
-- **F1-score:** 0.7470  
-
-Class-wise results:
-
-- **Class 0**
-  - Precision: 0.7360
-  - Recall: 0.6955
-  - F1-score: 0.7152
-  - Support: 3258
-
-- **Class 1**
-  - Precision: 0.7287
-  - Recall: 0.7662
-  - F1-score: 0.7470
-  - Support: 3478
-
-Aggregate results:
-
-- **Macro average**
-  - Precision: 0.7323
-  - Recall: 0.7309
-  - F1-score: 0.7311
-
-- **Weighted average**
-  - Precision: 0.7322
-  - Recall: 0.7320
-  - F1-score: 0.7316
+- **Accuracy:** 0.7300  
+- **Precision:** 0.7168
+- **Recall:** 0.7887 
+- **F1-score:** 0.7510 
 
 These results show that the model achieves balanced overall performance on the development set, with somewhat stronger recall for the positive entailment class than for the negative class.
+
+### Baseline Comparison
+
+| Model | Accuracy | Macro F1 |
+|------|--------|---------|
+| SVM | ~0.586 | ~0.584 |
+| LSTM | ~0.660 | ~0.660 |
+| BERT (baseline) | ~0.820 | ~0.820 |
+| Proposed ESIM Model | 0.733 | 0.731 |
 
 ## Technical Specifications
 
@@ -161,9 +160,9 @@ The model can be trained and evaluated in a standard machine learning environmen
 
 Recommended hardware:
 
-- GPU-enabled notebook environment (optional but recommended)
-- minimum 8–16 GB RAM
-- sufficient disk space to store pretrained embeddings and saved model artifacts
+- RAM: 16 GB RAM
+- Storage: at least 2GB (to store pretrained embeddings and saved model artifacts)
+- GPU: Google Colab with NVIDIA Tesla T4 GPU
 
 ### Software
 
