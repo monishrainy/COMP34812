@@ -16,7 +16,7 @@ repo: https://github.com/monishrainy/COMP34812
 
 ## Model Details
 
-- Developed by: Diya Chutani, Affan Bin Imran, Mohd Monish Rainy  
+- Developed by: Diya Chutani, Affan Bin Imran and Mohd Monish Rainy  
 - Language(s): English  
 - Model type: Supervised  
 - Model architecture: Transformer
