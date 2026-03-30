@@ -14,6 +14,23 @@ repo: https://github.com/monishrainy/COMP34812
 
 ---
 
+## Model Details
+
+- Developed by: Diya Chutani, Affan Bin Imran, Mohd Monish Rainy  
+- Language(s): English  
+- Model type: Supervised  
+- Model architecture: Transformer
+- Finetuned from model: roberta-base  
+
+---
+
+## Model Resources
+
+- Repository: https://huggingface.co/FacebookAI/roberta-base
+- Paper or documentation: https://arxiv.org/abs/1907.11692 
+
+---
+
 ## Model Overview
 
 This model performs Natural Language Inference (NLI), classifying whether a hypothesis is supported or contradicted by a given premise.
@@ -44,17 +61,6 @@ The weight \( \alpha \) is selected based on development set performance.
 
 ---
 
-## Data Preprocessing
-
-Basic preprocessing steps were applied to ensure data quality:
-
-- Missing values in premise and hypothesis were replaced with empty strings  
-- Leading and trailing whitespace was removed  
-- Examples with empty premise or hypothesis were discarded  
-- Labels were mapped to numerical IDs for training  
-
----
-
 ## Training Details
 
 ### Dataset
@@ -65,7 +71,7 @@ Basic preprocessing steps were applied to ensure data quality:
 
 ### Hyperparameters
 - Batch size: 16  
-- Epochs: 3  
+- Epochs: 2
 - Learning rate: 2e-5  
 - Weight decay: 0.01  
 - Warmup ratio: 0.06  
@@ -102,24 +108,31 @@ Basic preprocessing steps were applied to ensure data quality:
 | BERT (baseline) | ~0.820 | ~0.820 |
 | Proposed Ensemble Model | 0.886 | 0.886 |
 
-The proposed model shows a clear improvement over standard baselines.
-
 ---
 
 ## Key Contributions
 
-- Combines cross-encoder and bi-encoder transformer architectures  
+- Combines cross encoder and bi encoder transformer architectures  
 - Uses a weighted ensemble to integrate complementary representations  
-- Improves performance over standard fine-tuned transformer models  
+- Improves performance over standard fine-tuned transformer models
 
 ---
 
-## Implementation Details
+## Technical Specifications
 
-- Framework: PyTorch  
-- Transformer library: HuggingFace Transformers  
-- Optimizer: AdamW  
-- Learning rate scheduling: linear warmup  
+### Hardware
+
+- GPU: NVIDIA Tesla T4  
+- Compute: CUDA enabled GPU acceleration  
+- RAM: 10–16 GB recommended for training  
+
+---
+
+### Software
+
+- Python 3.x  
+- PyTorch  
+- HuggingFace Transformers  
 
 ---
 
@@ -133,14 +146,11 @@ The proposed model shows a clear improvement over standard baselines.
 
 ## References
 
-- Devlin et al. (2019) — BERT: Pre-training of Deep Bidirectional Transformers  
-  https://arxiv.org/abs/1810.04805  
-
 - Liu et al. (2019) — RoBERTa: A Robustly Optimized BERT Pretraining Approach  
   https://arxiv.org/abs/1907.11692  
 
 ---
 
-## Summary
+## Additional Information
 
-This work shows that combining interaction-based and representation-based transformer models can improve performance on NLI. The hybrid ensemble captures both detailed reasoning and overall semantic similarity, leading to more robust predictions.
+The hyperparameters were determined by experimentation with different values.
