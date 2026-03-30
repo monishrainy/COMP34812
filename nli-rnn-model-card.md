@@ -138,9 +138,12 @@ Model evaluation was performed on the **development dataset (`dev.csv`)**, which
 The following metrics were computed during evaluation:
 
     - Accuracy
-    - Precision
-    - Recall
-    - F1-score
+    - Macro Precision
+    - Macro Recall
+    - Macro F1-score
+    - Weighted Precision
+    - Weighted Recall
+    - Weighted F1-score
 
 Predicted probabilities were converted to binary labels using a **classification threshold of 0.5**.
 
@@ -200,7 +203,7 @@ The model was implemented using the following software stack:
 
 This model inherits potential biases present in the provided dataset, including linguistic, topical, and annotation biases. Since the dataset was supplied as part of a shared task, its data collection and labeling process are outside the control of the developers.
 
-The model also has several limitations. The maximum sequence length is determined from the 95th percentile of the training data, so longer inputs are truncated and may lose important information. The vocabulary is limited to the most frequent 30,000 tokens, meaning rare or unseen words may be mapped to an **<OOV>** token. Performance also depends on the coverage and quality of the pretrained FastText embeddings.
+The model also has several limitations. The maximum sequence length is determined from the 95th percentile of the training data, so longer inputs are truncated and may lose important information. The vocabulary is limited to the most frequent 30,000 tokens, meaning rare or unseen words may be mapped to an `<OOV>`  token. Performance also depends on the coverage and quality of the pretrained FastText embeddings.
 
 Additionally, the model performs binary entailment classification and does not address full three-class NLI. As a non-transformer architecture, it may be less effective than modern transformer-based models at capturing long-range dependencies and complex reasoning patterns. Finally, the model relies on a fixed probability threshold for classification, which may not be optimal under different class distributions.
 
