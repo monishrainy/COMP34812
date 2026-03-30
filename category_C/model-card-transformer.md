@@ -143,4 +143,4 @@ The proposed model shows a clear improvement over standard baselines.
 
 ## Summary
 
-This work shows that combining interaction-based and representation-based transformer models can improve performance on NLI. The hybrid ensemble captures both detailed reasoning and overall semantic similarity, leading to more robust predictions.
+This shows that combining interaction-based and representation-based transformer models can improve performance on NLI. The hybrid ensemble captures both detailed reasoning and overall semantic similarity, leading to more robust predictions.
