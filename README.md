@@ -64,6 +64,9 @@ Link to trained model is [here.](https://livemanchesterac-my.sharepoint.com/:f:/
         - `cross_encoder/`
             - `cross_encoder_model.pt`
             - `cross_encoder_metadata.json`
+            - `cross_encoder_tokenizer/`
+                - `tokenizer.json`
+                - `tokenizer_config.json`
         - `bi_encoder/`
             - `bi_encoder_model.pt`
         - `ensemble/`
