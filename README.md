@@ -35,6 +35,8 @@ Link to trained model is [here.](https://livemanchesterac-my.sharepoint.com/:f:/
         - tokenizer.pkl
         - config.json
 
+  - Run the demo.ipynb file
+
 ---
 
 ### Transformer Model (Category C)
