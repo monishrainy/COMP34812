@@ -61,45 +61,40 @@ where \(alpha) is chosen based on development set performance.
   - 1: Support  
 
 ### Hyperparameters
-- Batch size: 16  
-- Epochs: 2
-- Learning rate: 2e-5  
-- Weight decay: 0.01  
-- Warmup ratio: 0.06  
-- Maximum sequence length: 256  
-- Random seed: 42
+
+    - Batch size: 16  
+    - Epochs: 2
+    - Learning rate: 2e-5  
+    - Weight decay: 0.01  
+    - Warmup ratio: 0.06  
+    - Maximum sequence length: 256  
+    - Random seed: 42
+
+---
+### Speeds, Sizes, Times
+
+    - overall training time: 30 minutes  
+    - cross-encoder training time: 14 minutes  
+    - bi-encoder training time: 16 minutes  
+    - cross-encoder model size: 476 MB
+    - bi-encoder model size: 478 MB  
 
 ---
 
-#### Speeds, Sizes, Times
+### Evaluation Results (Development Set)
 
-- overall training time: 30 minutes  
-- cross-encoder training time: 14 minutes (≈7 minutes per epoch)  
-- bi-encoder training time: 16 minutes (≈8 minutes per epoch)  
-- cross-encoder model size: 476 MB  
-- bi-encoder model size: 478 MB  
+The hybrid ensemble model was evaluated on the NLI development set using the official local scoring script.
 
+    - Accuracy: 0.8861  
+    - Macro Precision: 0.8863  
+    - Macro Recall: 0.8857  
+    - Macro F1 Score: 0.8859  
 
----
+    - Weighted Precision: 0.8862  
+    - Weighted Recall: 0.8861  
+    - Weighted F1 Score: 0.8861  
 
-## Evaluation
-
-### Metrics
-- Accuracy  
-- Macro Precision  
-- Macro Recall  
-- Macro F1-score  
-- Matthews Correlation Coefficient (MCC)  
-
-### Results (Development Set)
-
-| Metric | Score |
-|------|------|
-| Accuracy | 0.886 |
-| Macro Precision | 0.886 |
-| Macro Recall | 0.886 |
-| Macro F1-score | 0.886 |
-| MCC | 0.772 |
+    - Matthews Correlation Coefficient (MCC): 0.7720
 
 ### Baseline Comparison
 
@@ -125,13 +120,13 @@ where \(alpha) is chosen based on development set performance.
 
 ### Software
 
-- Python 3.10  
-- PyTorch 2.1  
-- HuggingFace Transformers 4.36  
-- NumPy 1.26  
-- Pandas 2.1  
-- Scikit-learn 1.3  
-- TQDM 4.66  
+    - Python 3.10  
+    - PyTorch 2.1  
+    - HuggingFace Transformers 4.36  
+    - NumPy 1.26  
+    - Pandas 2.1  
+    - Scikit-learn 1.3  
+    - TQDM 4.66  
 
 ---
 
