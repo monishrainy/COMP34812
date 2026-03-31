@@ -39,11 +39,9 @@ The ensemble combines two complementary modeling strategies:
 
 The final prediction is computed as:
 
-\[
-\text{final\_logits} = \alpha \cdot \text{cross\_logits} + (1 - \alpha) \cdot \text{bi\_logits}
-\]
+final_logits = α · cross_logits + (1 - α) · bi_logits
 
-where \( \alpha \) is chosen based on development set performance.
+where \(alpha) is chosen based on development set performance.
 
 ---
 
@@ -69,7 +67,18 @@ where \( \alpha \) is chosen based on development set performance.
 - Weight decay: 0.01  
 - Warmup ratio: 0.06  
 - Maximum sequence length: 256  
-- Random seed: 42  
+- Random seed: 42
+
+---
+
+#### Speeds, Sizes, Times
+
+- overall training time: 30 minutes  
+- cross-encoder training time: 14 minutes (≈7 minutes per epoch)  
+- bi-encoder training time: 16 minutes (≈8 minutes per epoch)  
+- cross-encoder model size: 476 MB  
+- bi-encoder model size: 478 MB  
+
 
 ---
 
@@ -108,7 +117,7 @@ where \( \alpha \) is chosen based on development set performance.
 ### Hardware
 
 - RAM: 10–16 GB recommended for training
-- Storage: 
+- Storage: 3–5 GB
 - GPU: NVIDIA Tesla T4
 - Compute: CUDA enabled GPU acceleration  
 
@@ -116,9 +125,13 @@ where \( \alpha \) is chosen based on development set performance.
 
 ### Software
 
-- Python 3.x  
-- PyTorch  
-- HuggingFace Transformers  
+- Python 3.10  
+- PyTorch 2.1  
+- HuggingFace Transformers 4.36  
+- NumPy 1.26  
+- Pandas 2.1  
+- Scikit-learn 1.3  
+- TQDM 4.66  
 
 ---
 
