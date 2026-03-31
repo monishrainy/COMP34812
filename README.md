@@ -111,7 +111,7 @@ Train the models using the provided Jupyter Notebooks:
 
 | Model | Link |
 |-------|------|
-| Classical NLI (Category B) | [View Model Card](nli-rnn-model-card.md) |
+| Classical NLI (Category B) | [View Model Card](https://github.com/monishrainy/COMP34812/blob/main/category_B/nli-rnn-model-card.md) |
 | Transformer NLI (Category C) | [View Model Card](https://github.com/monishrainy/COMP34812/blob/main/category_C/nli-transformer-model-card.md) |
 
 ---
