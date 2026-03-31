@@ -28,14 +28,14 @@ Link to trained model is [here.](https://livemanchesterac-my.sharepoint.com/:f:/
 
 - Download the model artifacts from the link above and place them in:
 
-  - outputs/category_B/
+  - `outputs/category_B/`
       
         Required files:
-        - best_model.keras
-        - tokenizer.pkl
-        - config.json
+        - `best_model.keras`
+        - `tokenizer.pkl`
+        - `config.json`
 
-  - Run the demo.ipynb file
+  - Then run `category_B/demo.ipynb`.
 
 ---
 
