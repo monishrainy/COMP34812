@@ -2,11 +2,11 @@
 
 This project implements two models for Natural Language Inference (NLI):  
 - A **non-transformer model** using recurrent networks with soft attention and local inference modeling  
-- A **transformer-based model** (Category C – placeholder)
+- A **transformer-based hybrid ensemble model**
 
 Each approach is located in its own directory:
 - `category_B/` – ESIM-inspired BiLSTM model with FastText embeddings for binary entailment classification  
-- `category_C/` – Placeholder for transformer-based model (not part of this submission)
+- `category_C/` – Hybrid transformer ensemble model for binary NLI classification
 
 ---
 
@@ -40,10 +40,36 @@ Link to trained model is [here.](https://livemanchesterac-my.sharepoint.com/:f:/
 ---
 
 ### Transformer Model (Category C)
-- Placeholder for transformer-based approach (not included in this submission)
-- This section is reserved for a potential transformer model (e.g., RoBERTa/BERT)
+- Based on a hybrid transformer architecture using RoBERTa [3]
+- Combines two complementary models:
+  - A cross-encoder for joint reasoning over premise and hypothesis  
+  - A bi-encoder for semantic similarity using sentence embeddings  
+- The model includes:
+  - A pretrained RoBERTa encoder (roberta-base)
+  - A cross-encoder that processes concatenated premise–hypothesis pairs
+  - A bi-encoder that encodes each sentence independently
+  - Mean pooling to obtain fixed-size sentence representations
+  - Feature combination using concatenation, absolute difference, and element-wise operations
+  - Fully connected layers with dropout for classification
+- Final predictions are obtained using a weighted ensemble of both models
+- Outputs a binary prediction (Support / Contradiction)
 
-Link to trained model is not applicable.
+Link to trained model is [here.](Link)
+
+- Download the model artifacts from the link above and place them in:
+
+  - `outputs/category_C/`
+      
+        Required structure:
+        - `cross_encoder/`
+            - `cross_encoder_model.pt`
+            - `cross_encoder_metadata.json`
+        - `bi_encoder/`
+            - `bi_encoder_model.pt`
+        - `ensemble/`
+            - `ensemble_metadata.json`
+
+  - Then run `category_C/demo.ipynb`.
 
 ---
 
@@ -95,3 +121,5 @@ Train the models using the provided Jupyter Notebooks:
 - [1] Chen, Q., Zhu, X., Ling, Z., Wei, S., Jiang, H., & Inkpen, D. (2017). *Enhanced LSTM for Natural Language Inference*. [ArXiv](https://arxiv.org/abs/1609.06038) 
 
 - [2] Bojanowski, P., Grave, E., Joulin, A., & Mikolov, T. (2017). *Enriching Word Vectors with Subword Information*. [ArXiv](https://arxiv.org/abs/1607.04606)
+
+- [3] Liu, Y., Ott, M., Goyal, N., et al. (2019). *RoBERTa: A Robustly Optimized BERT Pretraining Approach*. [ArXiv](https://arxiv.org/abs/1907.11692)
