@@ -24,7 +24,16 @@ Each approach is located in its own directory:
 - Sentence representations are obtained using global average and max pooling
 - Outputs a binary prediction (Entailment / Contradiction) using a sigmoid layer
 
-Link to trained model is [here.](ADD_DRIVE_LINK_HERE)
+Link to trained model is [here.](https://livemanchesterac-my.sharepoint.com/:f:/r/personal/mohd_-_student_manchester_ac_uk/Documents/NLI_Category_B_Artifacts?csf=1&web=1&e=bNBKeO)
+
+- Download the model artifacts from the link above and place them in:
+
+  - outputs/category_B/
+      
+        Required files:
+        - best_model.keras
+        - tokenizer.pkl
+        - config.json
 
 ---
 
