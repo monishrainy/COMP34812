@@ -120,8 +120,8 @@ Training also used the following callbacks:
 
 #### Speeds, Sizes, Times
 
-    - overall training time: 4 minutes 58 seconds  
-    - duration per training epoch: 19.82 seconds  
+    - overall training time: 5 minutes 10 seconds  
+    - duration per training epoch: 20.42 seconds  
     - model size: 50.02 MB  
     - tokenizer size: 1.35 MB  
 
@@ -151,13 +151,13 @@ Predicted probabilities were converted to binary labels using a **classification
 
 Development-set results from `evaluate.ipynb`:
 
-- **Accuracy:** 0.7338
-- **Macro Precision:** 0.7350
-- **Macro Recall:** 0.7322
-- **Macro F1-score:** 0.7324
-- **Weighted Precision:** 0.7347
-- **Weighted Recall:** 0.7338
-- **Weighted F1-score:** 0.7330
+- **Accuracy:** 0.7213
+- **Macro Precision:** 0.7211
+- **Macro Recall:** 0.7206
+- **Macro F1-score:** 0.7208
+- **Weighted Precision:** 0.7213
+- **Weighted Recall:** 0.7213
+- **Weighted F1-score:** 0.7212
 
 These results indicate that the model achieves balanced overall performance on the development set. The macro F1-score demonstrates consistent performance across both classes, while the weighted metrics closely align with overall accuracy, reflecting a relatively balanced class distribution.
 
@@ -168,7 +168,7 @@ These results indicate that the model achieves balanced overall performance on t
 | SVM | ~0.586 | ~0.584 |
 | LSTM | ~0.660 | ~0.660 |
 | BERT (baseline) | ~0.820 | ~0.820 |
-| Proposed ESIM-lite Model | 0.734 | 0.732 |
+| Proposed ESIM-lite Model | 0.721 | 0.721 |
 
 The proposed ESIM-lite model significantly outperforms traditional baselines such as SVM and vanilla LSTM, while remaining competitive given the constraint of not using transformer-based architectures.
 
