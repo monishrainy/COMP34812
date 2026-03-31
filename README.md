@@ -54,7 +54,7 @@ Link to trained model is [here.](https://livemanchesterac-my.sharepoint.com/:f:/
 - Final predictions are obtained using a weighted ensemble of both models
 - Outputs a binary prediction (Support / Contradiction)
 
-Link to trained model is [here.](Link)
+Link to trained model is [here.](https://livemanchesterac-my.sharepoint.com/:f:/r/personal/mohd_-_student_manchester_ac_uk/Documents/NLI_Category_C_Artifacts?csf=1&web=1&e=G1dreV)
 
 - Download the model artifacts from the link above and place them in:
 
