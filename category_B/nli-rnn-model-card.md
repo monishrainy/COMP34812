@@ -165,8 +165,8 @@ These results indicate that the model achieves balanced overall performance on t
 
 | Model | Accuracy | Macro F1 |
 |------|--------|---------|
-| SVM | ~0.586 | ~0.584 |
-| LSTM | ~0.660 | ~0.660 |
+| SVM (baseline)| ~0.586 | ~0.584 |
+| LSTM (baseline)| ~0.660 | ~0.660 |
 | BERT (baseline) | ~0.820 | ~0.820 |
 | Proposed ESIM-lite Model | 0.721 | 0.721 |
 
